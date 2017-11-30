@@ -1,0 +1,11 @@
+@import "../../styles/_variables.scss";
+
+.root {
+  a {
+    color: $gray-500;
+    &:hover { color: $gray-600; }
+  }
+  :global {
+    .navbar-brand { padding: 0;}
+  }
+}

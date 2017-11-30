@@ -1,0 +1,75 @@
+@import "../../styles/_variables.scss";
+
+$transition-function: cubic-bezier(.44,.09,.23,1);
+$transition-duration: 1.5s;
+$transition-delay: 100ms;
+
+@mixin button {
+  transition: opacity 0.5s;
+  font-size: 2rem;
+  cursor: pointer;
+  color: $gray-400;
+
+  position: absolute;
+  padding: 0;
+
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+
+  border: 0;
+  background: transparent;
+
+  &:focus { outline: 0}
+}
+
+.root {
+  background-color: white;
+  .previousButton {
+    @include button;
+    left: 0;
+  }
+  .nextButton {
+    @include button;
+    right: 0;
+  }
+  position: relative;
+  height: 480px;
+  article {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 550px;
+    overflow: hidden;
+    position: absolute;
+    > * {
+      position: absolute;
+    }
+    img {
+      top: 50px;
+      width: 45%;
+      box-shadow: 0 5px 30px -5px rgba(0,0,0,.8);
+      transition: left $transition-duration $transition-function 0s;
+    }
+    div {
+      transition: left $transition-duration $transition-function $transition-delay;
+      top: 110px;
+      width: 30%;
+      .sectionTitle {
+        text-transform: none;
+        color: $gray-600;
+        font-size: .7em;
+        font-weight: lighter;
+      }
+      .articleTitle {
+        font-size: 2em;
+        text-transform: none;
+        margin-bottom: 0.1rem;
+      }
+      .field {
+        color: $gray-600;
+        display: block;
+      }
+    }
+  }
+}

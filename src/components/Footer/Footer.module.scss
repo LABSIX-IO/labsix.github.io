@@ -1,0 +1,44 @@
+@import "../../styles/_variables.scss";
+
+$gradient-intensity: 8%;
+
+.root {
+  background-color: $blue;
+
+  padding: 100px 100px;
+  padding-bottom: 30px + 40px; // extra 40px because of the pre-hack
+
+  * {
+    color: mix(white, $blue, 80%);
+  }
+  a:hover {
+    &, & i {color: white};
+  }
+  h6 {
+    padding-bottom: 5px;
+    border-bottom: thin solid white;
+  }
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .contact {
+    ul {
+      i { width: 25px }
+      pre { display: inline-block; position: absolute;} // hack
+    }
+  }
+
+  .light { opacity: .6;}
+  .social {
+    ul {
+      margin-top:  -12px;
+    }
+    li {
+      margin: 0 8px;
+      font-size: 2.5rem;
+      display: inline;
+    }
+  }
+}

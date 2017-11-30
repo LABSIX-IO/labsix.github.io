@@ -1,0 +1,28 @@
+@import "../../styles/_variables.scss";
+
+$blurColor: rgba(255, 255, 255, .95);
+
+@mixin section {
+  padding: 120px 80px !important;
+
+}
+
+.whatSection {
+  @include section() ;
+  background: url('./office.jpg');
+  background-size: cover;
+  background-position: center;
+  article {
+    position: relative;
+    background-color: $blurColor;
+    border-radius: 15px;
+    box-shadow:
+      0 0 100px 100px $blurColor,
+  }
+}
+
+.whySection {
+  // @include section();
+  padding: 180px 100px !important;
+  background-color: $gray-200;
+}

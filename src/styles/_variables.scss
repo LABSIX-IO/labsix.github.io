@@ -1,0 +1,11 @@
+$blue: #1B6EAE;
+$orange: #F2A23C;
+
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+
+$theme-colors: (
+  "primary": darken($orange, 10%),
+);
+
+$body-bg: $gray-100;
