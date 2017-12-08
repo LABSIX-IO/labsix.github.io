@@ -1,38 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import { findDOMNode} from 'react-dom'
 
 import { Container, Col } from 'reactstrap';
 
 import styles from './CaseStudies.module.scss'
-import image from './placeholder.jpg'
+import placeholder from './placeholder.jpg'
 
-const content = [
-  {
-    title: "Certhon 1",
-    field: "Agriculture",
-    summary: "Et voluptates eaque odit exercitationem aut et odio. Cumque ut veritatis omnis minus et sit. Commodi a ipsam aliquam aut doloremque. Quia nemo asperiores ut id et inventore aut delectus.",
-    image,
-  },
-  {
-    title: "Certhon 2",
-    field: "Agriculture",
-    summary: "Et voluptates eaque odit exercitationem aut et odio. Cumque ut veritatis omnis minus et sit. Commodi a ipsam aliquam aut doloremque. Quia nemo asperiores ut id et inventore aut delectus.",
-    image,
-  },
-  {
-    title: "Certhon 3",
-    field: "Agriculture",
-    summary: "Et voluptates eaque odit exercitationem aut et odio. Cumque ut veritatis omnis minus et sit. Commodi a ipsam aliquam aut doloremque. Quia nemo asperiores ut id et inventore aut delectus.",
-    image,
-  },
-]
-
-const getIndex = n => (n%content.length+content.length)%content.length
+const getRollingIndex = count => n => (n%count+count)%count
 
 const m = 2
 const Article = ({article, position}) => (
   <article>
-    <div style={{ left: m*100*position+60 + '%' }}>
+    <div style={{ left: m*100*position+58 + '%' }}>
       <h3 className={styles.sectionTitle}>Case study</h3>
       <h4 className={styles.articleTitle}>
         {article.title}
@@ -40,11 +20,19 @@ const Article = ({article, position}) => (
       <p className={styles.field}>{article.field}</p>
       <p>{article.summary}</p>
     </div>
-    <img style={{ left: m*100*position+9 + '%' }} src={article.image}/>
+    <img
+      style={{ left: m*100*position+9 + '%' }}
+      src={article.image && article.image.childImageSharp.resize.src || placeholder}
+    />
   </article>
 )
 
 export default class CaseStudies extends Component {
+
+  static propTypes = {
+    cases: PropTypes.array.isRequired,
+  }
+
   constructor(props){
     super(props)
     this.state = {
@@ -79,31 +67,32 @@ export default class CaseStudies extends Component {
   }
 
   render (){
+    const { cases } = this.props
     const { uiVisible, currentArticle } = this.state
     const uiStyle = { opacity: uiVisible ? 100 : 0 }
-    const article = content[0]
+    const getIdx = getRollingIndex(cases.length)
 
-    const prevIdx = getIndex(currentArticle-1)
-    const curIdx = getIndex(currentArticle)
-    const nextIdx = getIndex(currentArticle+1)
+    const prevIdx = getIdx(currentArticle-1)
+    const curIdx = getIdx(currentArticle)
+    const nextIdx = getIdx(currentArticle+1)
 
     const articles = [
       //prev
       <Article
         key={currentArticle-1}
-        article={content[prevIdx]}
+        article={cases[prevIdx]}
         position={-1}
       />,
       //current
       <Article
         key={currentArticle}
-        article={content[curIdx]}
+        article={cases[curIdx]}
         position={0}
       />,
       //next
       <Article
         key={currentArticle+1}
-        article={content[nextIdx]}
+        article={cases[nextIdx]}
         position={1}
       />
     ]

@@ -8,16 +8,14 @@ export default function WhatSection() {
     <article className={styles.whySection}>
       <Row>
         <Col md={{size:6}} tag='article'>
-          <h2>WAAROM DAN?</h2>
-          <p>Do minim quem veniam ullamco. Quae non probant, consequat nulla cillum ea quis
-            non aliqua ea deserunt ut officia veniam nostrud excepteur, eiusmod aut quid est
-            fugiat laborum se pariatur, o doctrina voluptatibus, tempor laborum adipisicing.
-            Velit consequat relinqueret, ad pariatur a quamquam iis ad quis magna e
-            cernantur se eiusmod irure pariatur admodum, anim cupidatat qui relinqueret,
-            quid litteris a summis labore hic quid litteris e possumus, fabulas fore
-            officia.</p>
+          <h2>motivatie</h2>
+          <p>We leven in een bijzondere tijd. Technologie beweegt sneller dan ooit en in is toegankelijk voor iedereen. Niet langer hoef je veel geld te hebben of wetenschapper te zijn.</p>
+          <p>De wereld ligt aan de voeten van diegene die met moderne technieken op een creatieve manier met nieuwe oplossing komt.</p>
         </Col>
       </Row>
     </article>
   )
 }
+
+// Brain by Sergey Patutin from the Noun Project
+// Cloud by Busy from the Noun Project
