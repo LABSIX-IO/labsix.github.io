@@ -59,7 +59,7 @@ export default class Navigation extends Component {
 
 
     return (
-      <Navbar style={shadowStyle} className={`${styles.root} sticky-top container`} color="white">
+      <Navbar style={shadowStyle} className={`${styles.root} fixed-top container`} color="white">
         <NavbarBrand href="/">
           {logoElement}
         </NavbarBrand>
