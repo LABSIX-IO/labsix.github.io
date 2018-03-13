@@ -1,34 +1,34 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-4a8f0a3a231bb398bade.js",
-      "component---src-pages-index-js-4a8f0a3a231bb398bade.js.map"
+      "component---src-pages-index-js-b365b1de2144a16bf448.js",
+      "component---src-pages-index-js-b365b1de2144a16bf448.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-2a65fc13d3e3f20edcdf.js",
-      "component---src-layouts-index-js-2a65fc13d3e3f20edcdf.js.map"
+      "component---src-layouts-index-js-9cd8f8b02d0331f4db03.js",
+      "component---src-layouts-index-js-9cd8f8b02d0331f4db03.js.map"
     ],
     "path---page-2": [
       "path---page-2-a0e39f21c11f6a62c5ab.js",
       "path---page-2-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-3691e1a666776275e636.js",
-      "path---index-3691e1a666776275e636.js.map"
+      "path---index-c99774de9d5d47118115.js",
+      "path---index-c99774de9d5d47118115.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-3499f2ea66b05ec01dc6.js",
-      "component---src-pages-404-js-3499f2ea66b05ec01dc6.js.map"
+      "component---src-pages-404-js-9cca95c441be07330098.js",
+      "component---src-pages-404-js-9cca95c441be07330098.js.map"
     ],
     "commons": [
       "commons-2beee32eeffa40993e94.js",
-      "styles.css",
+      "build-js-styles.css",
       "commons-2beee32eeffa40993e94.js.map",
-      "styles.css.map"
+      "build-js-styles.css.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -40,9 +40,9 @@
     ],
     "app": [
       "app-e037c3f2d088c2ca3195.js",
-      "styles.css",
+      "build-js-styles.css",
       "app-e037c3f2d088c2ca3195.js.map",
-      "styles.css.map"
+      "build-js-styles.css.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
