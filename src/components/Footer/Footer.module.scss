@@ -5,8 +5,8 @@ $gradient-intensity: 8%;
 .root {
   background-color: $blue;
 
-  padding: 100px 100px;
-  padding-bottom: 30px + 40px; // extra 40px because of the pre-hack
+  padding: 100px 60px;
+  padding-bottom: 30px; // extra 40px because of the pre-hack
 
   * {
     color: mix(white, $blue, 80%);
@@ -28,6 +28,7 @@ $gradient-intensity: 8%;
       i { width: 25px }
       pre { display: inline-block; position: absolute;} // hack
     }
+    margin-bottom: 40px;
   }
 
   .light { opacity: .6;}

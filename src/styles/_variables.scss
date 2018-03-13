@@ -2,6 +2,9 @@ $blue: #1B6EAE;
 $orange: #F2A23C;
 
 @import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+@import "~bootstrap/scss/mixins/_image.scss";
+@import "~bootstrap/scss/mixins/_clearfix.scss";
 @import "~bootstrap/scss/_variables.scss";
 
 $theme-colors: (

@@ -24,4 +24,23 @@ $gradient-intensity: 8%;
     margin-top: 0.75rem;
     font-size: 1.25rem;
   }
+
+  @include media-breakpoint-down(md){
+    svg {width: 50%;}
+  }
+  @include media-breakpoint-down(sm){
+    height: 270px;
+    svg {
+      margin-top: 40px;
+      width: 60%;
+    }
+  }  
+  @include media-breakpoint-down(xs){
+    height: 250px;
+    svg {
+      margin-top: 30px;
+      width: 80%;
+    }
+  }
+
 }

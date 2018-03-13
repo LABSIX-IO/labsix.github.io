@@ -1,6 +1,6 @@
-@import "../../styles/_variables.scss";
+@import '../../styles/_variables.scss';
 
-$transition-function: cubic-bezier(.44,.09,.23,1);
+$transition-function: cubic-bezier(0.44, 0.09, 0.23, 1);
 $transition-duration: 1.5s;
 $transition-delay: 100ms;
 
@@ -13,18 +13,27 @@ $transition-delay: 100ms;
   position: absolute;
   padding: 0;
 
-  width: 100px;
+  width: 60px;
   height: 100%;
   z-index: 2;
 
   border: 0;
   background: transparent;
 
-  &:focus { outline: 0}
+  &:focus {
+    outline: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 40px;
+    // display: none;
+  }
 }
 
+$overflow: 70px;
+$shadowHOffset: 30px;
+
 .root {
-  background-color: white;
+  // background-color: white;
   .previousButton {
     @include button;
     left: 0;
@@ -33,42 +42,88 @@ $transition-delay: 100ms;
     @include button;
     right: 0;
   }
+
+  // typography
+  .sectionTitle {
+    text-transform: none;
+    color: $gray-600;
+    font-size: 0.7em;
+    font-weight: lighter;
+  }
+  .articleTitle {
+    font-size: 2em;
+    text-transform: none;
+    margin-bottom: 0.1rem;
+  }
+  .field {
+    color: $gray-600;
+    display: block;
+  }
+  //styling
+  article img {
+    box-shadow: 0 5px $shadowHOffset -5px rgba(0, 0, 0, 0.8);
+    margin-bottom: $shadowHOffset;
+    position: relative;
+    width: 100%;
+    @include img-fluid();
+  }
+
+  // layout
+  margin-bottom: -$overflow;
   position: relative;
-  height: 480px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0;
   article {
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 550px;
-    overflow: hidden;
-    position: absolute;
-    > * {
+    display: none;
+    &.currentArticle {
+      display: block;
+      z-index: 1;
+    }
+    .img {
+      position: relative;
+      transition: left $transition-duration $transition-function
+        $transition-delay;
+    }
+    .text {
+      position: relative;
+      transition: right $transition-duration $transition-function 0s;
+    }
+    padding: 40px 40px 0;
+  }
+
+  &.live {
+    transition: height 100ms $transition-function 0s;
+    article {
+      display: block;
       position: absolute;
     }
-    img {
-      top: 50px;
-      width: 42%;
-      box-shadow: 0 5px 30px -5px rgba(0,0,0,.8);
-      transition: left $transition-duration $transition-function 0s;
+  }
+
+  @include media-breakpoint-up(md) {
+    $padding: 60px;
+    padding: 0 $padding;
+    article {
+      padding: 60px 0 0 0;
+      left: $padding;
+      right: $padding;
+      &.currentArticle {
+        display: flex;
+      }
+      align-items: center;
+      .img {
+        flex: 1 1 auto;
+      }
+      .text {
+        flex: 1 0 250px;
+        margin-right: 20px;
+        margin-bottom: $overflow;
+      }
     }
-    div {
-      transition: left $transition-duration $transition-function $transition-delay;
-      top: 110px;
-      width: 30%;
-      .sectionTitle {
-        text-transform: none;
-        color: $gray-600;
-        font-size: .7em;
-        font-weight: lighter;
-      }
-      .articleTitle {
-        font-size: 2em;
-        text-transform: none;
-        margin-bottom: 0.1rem;
-      }
-      .field {
-        color: $gray-600;
-        display: block;
+
+    &.live {
+      article {
+        display: flex;
       }
     }
   }

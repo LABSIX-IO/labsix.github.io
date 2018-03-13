@@ -1,23 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-import Header from 'components/Header'
-import { WhatSection, WhySection } from 'components/Sections'
-import CaseStudies from 'components/CaseStudies'
+import Header from 'components/Header';
+import { WhatSection, WhySection } from 'components/Sections';
+import CaseStudies from 'components/CaseStudies';
 
-const IndexPage = (props) => {
-  const cases = props.data.caseStudies.edges.map(edge => edge.node.frontmatter)
+const IndexPage = props => {
+  const cases = props.data.caseStudies.edges.map(edge => edge.node.frontmatter);
   console.log(cases);
   return (
     <div>
       <Header />
       <WhatSection />
-      <WhySection />
       <CaseStudies cases={cases} />
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query HomePage {
@@ -41,4 +40,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
