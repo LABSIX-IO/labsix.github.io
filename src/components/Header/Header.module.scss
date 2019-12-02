@@ -1,46 +1,47 @@
 @import "../../styles/_variables.scss";
 
-$gradient-intensity: 8%;
-
+$hue-varience: 10deg;
 .root {
-  text-align: center;
-  background-color: $orange;
-  background: linear-gradient(
-    to bottom,
-    lighten($orange, $gradient-intensity) 0%,
-    darken($orange, $gradient-intensity) 100%
-  );
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 
-  text-align: center;
-  svg {
-    margin-top: 120px;
-    width: 35%;
-    display: inline-block;
+  .logo {
+    flex: 0 0 auto;
     text-align: center;
+    margin: 0 auto;
   }
-  h5 {
-    color: rgba(255,255,255,.8);
+  .subtitle {
+    flex: 0;
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 0.75rem;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 6px;
   }
 
-  @include media-breakpoint-down(md){
-    svg {width: 50%;}
+  // styling
+  background: $orange;
+  background: linear-gradient(
+    125deg,
+    adjust-hue($orange, $hue-varience) 0%,
+    adjust-hue($orange, -$hue-varience) 100%
+  );
+  @include media-breakpoint-down(md) {
   }
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
     height: 270px;
-    svg {
-      margin-top: 40px;
-      width: 60%;
-    }
-  }  
-  @include media-breakpoint-down(xs){
+  }
+  @include media-breakpoint-down(xs) {
     height: 250px;
     svg {
-      margin-top: 30px;
-      width: 80%;
+      height: 90px;
+    }
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
     }
   }
-
 }

@@ -12,7 +12,10 @@ $gradient-intensity: 8%;
     color: mix(white, $blue, 80%);
   }
   a:hover {
-    &, & i {color: white};
+    &,
+    & i {
+      color: white;
+    }
   }
   h6 {
     padding-bottom: 5px;
@@ -25,16 +28,23 @@ $gradient-intensity: 8%;
 
   .contact {
     ul {
-      i { width: 25px }
-      pre { display: inline-block; position: absolute;} // hack
+      i {
+        width: 25px;
+      }
+      pre {
+        display: inline-block;
+        position: absolute;
+      } // hack
     }
     margin-bottom: 40px;
   }
 
-  .light { opacity: .6;}
+  .light {
+    opacity: 0.6;
+  }
   .social {
     ul {
-      margin-top:  -12px;
+      margin-top: -12px;
     }
     li {
       margin: 0 8px;

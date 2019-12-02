@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Container, Col, Row } from 'reactstrap';
+import React from 'react';
+import { Col, Row } from 'reactstrap';
+import styles from './Sections.module.scss';
 
-import styles from './Sections.module.scss'
 
 export default function WhatSection() {
   return (

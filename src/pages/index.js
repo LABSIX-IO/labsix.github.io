@@ -1,22 +1,9 @@
-import React from 'react';
-
-import Header from 'components/Header';
-import { WhatSection, WhySection } from 'components/Sections';
-import CaseStudies from 'components/CaseStudies';
-
-const IndexPage = props => {
-  const cases = props.data.caseStudies.edges.map(edge => edge.node.frontmatter);
-  console.log(cases);
-  return (
-    <div>
-      <Header />
-      <WhatSection />
-      <CaseStudies cases={cases} />
-    </div>
-  );
-};
-
-export default IndexPage;
+import React from "react"
+import CaseStudies from "../components/CaseStudies"
+import Header from "../components/Header"
+import { WhatSection } from "../components/Sections"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 
 export const pageQuery = graphql`
   query HomePage {
@@ -40,4 +27,19 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
+
+const IndexPage = props => {
+  const cases = props.data.caseStudies.edges.map(edge => edge.node.frontmatter)
+  console.log(cases)
+  return (
+    <Layout>
+      {/* <SEO title="Home" /> */}
+      <Header />
+      <WhatSection />
+      <CaseStudies cases={cases} />
+    </Layout>
+  )
+}
+
+export default IndexPage

@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-
-import Logo from '../Logo'
-
-import styles from './Header.module.scss'
+import React from "react"
+import Logo from "../Logo"
+import styles from "./Header.module.scss"
+import { Row } from "reactstrap"
 
 export default function Header() {
   return (
-    <header className={`container ${styles.root}`}>
-        <Logo/>
-        <h5>SOFTWARE ONTWIKKELING</h5>
-    </header>
+    <Row tag="header" className={styles.root}>
+      <Logo className={styles.logo} />
+      <h5 className={styles.subtitle}>SOFTWARE ONTWIKKELING</h5>
+    </Row>
   )
 }
