@@ -1,2 +1,0 @@
-webpackJsonp([0x9427c64ab85d],{200:function(e,n,t){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}n.__esModule=!0;var o=t(4),r=u(o),a=t(!function(){var e=new Error('Cannot find module "components/Page404"');throw e.code="MODULE_NOT_FOUND",e}()),d=u(a),l=function(){return r.default.createElement(d.default,null)};n.default=l,e.exports=n.default}});
-//# sourceMappingURL=component---src-pages-404-js-1cdbfddc5f064fe0a8fa.js.map
