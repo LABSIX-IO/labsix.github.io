@@ -10,7 +10,7 @@ const sizes = {
 
 export default function Header() {
   return (
-    <Row tag="footer" className={styles.root}>
+    <Row tag="footer" className={styles.root + " " + "justify-content-center"}>
       <Col className={styles.contact} {...sizes}>
         <h6>Contact</h6>
         <ul>
@@ -35,7 +35,7 @@ export default function Header() {
           <li title="adres">
             <i className="fa fa-building" />
             <pre>
-              {`Lelistraat 11\n3135XJ Vlaardingen\n`}
+              {`Leliestraat 11\n3135XJ Vlaardingen\n`}
               <span className={styles.light}>KVK 59066482</span>
             </pre>
           </li>
@@ -54,11 +54,11 @@ export default function Header() {
               <i className="fa fa-twitter" />
             </a>
           </li>
-          <li title="facebook">
+          {/* <li title="facebook">
             <a href="https://www.facebook.com/labsix.io/">
               <i className="fa fa-facebook-official" />
             </a>
-          </li>
+          </li> */}
           <li title="linkedin">
             <a href="https://www.linkedin.com/company/18023800">
               <i className="fa fa-linkedin" />
